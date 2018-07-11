@@ -24,6 +24,10 @@
             <result name="success">success.jsp</result>
         </action>
 
+        <action name="listProduct" class="com.soto.action.ProductAction" method="list">
+            <result name="list">list.jsp</result>
+        </action>
+
     </package>
 
 </struts>
