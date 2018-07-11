@@ -28,11 +28,17 @@
             <!--<result name="list">list.jsp</result>-->
         <!--</action>-->
 <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+        <interceptors>
+            <interceptor name="dateInterceptor" class="com.soto.interceptor.DateInterceptor" />
+        </interceptors>
+
         <!--*Product 表示所有以Product结尾的路径，都会匹配在这个Action上-->
         <!--method={1}表示第一个通配符-->
         <!--如果访问的是addProduct就会调用add方法-->
         <!--如果访问的是listProduct就会调用list方法-->
         <action name="*Product" class="com.soto.action.ProductAction" method="{1}">
+            <interceptor-ref name="dateInterceptor" />
+            <interceptor-ref name="defaultStack" />
             <result name="show">show.jsp</result>
             <result name="list">list.jsp</result>
         </action>

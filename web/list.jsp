@@ -58,6 +58,8 @@
 <%--/>--%>
 <%--<br>--%>
 
+${date}
+
 <table border="1" cellspacing="0">
 
     <tr>
