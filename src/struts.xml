@@ -4,6 +4,10 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+    <!--设置上传文件最大大小为10m-->
+    <constant name="struts.multipart.maxSize" value="10240000"/>
+
+
     <constant name="struts.i18n.encoding" value="UTF-8"></constant>
 
     <package name="basicstruts" extends="struts-default">
@@ -14,6 +18,10 @@
 
         <action name="addProduct" class="com.soto.action.ProductAction" method="add">
             <result name="show">show.jsp</result>
+        </action>
+
+        <action name="upload" class="com.soto.action.UploadAction" method="upload">
+            <result name="success">success.jsp</result>
         </action>
 
     </package>
