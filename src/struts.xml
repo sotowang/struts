@@ -43,6 +43,10 @@
             <result name="list">list.jsp</result>
         </action>
 
+        <action name="addPageProduct" class="com.soto.action.ProductAction" method="addPage">
+            <result name="addPage" type="redirect">addProduct.jsp?name=${name}</result>
+        </action>
+
     </package>
 
 </struts>

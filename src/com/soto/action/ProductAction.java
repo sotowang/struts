@@ -17,6 +17,19 @@ public class ProductAction {
     private List<Product> products;
     private List<Integer> selectedProducts;
     private Date date;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
 
     public Date getDate() {
         return date;
@@ -119,5 +132,10 @@ public class ProductAction {
 
     public void setProduct(Product product) {
         this.product = product;
+    }
+
+    public String addPage() {
+        name = "default name";
+        return "addPage";
     }
 }
