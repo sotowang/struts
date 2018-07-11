@@ -1,31 +1,24 @@
-package com.soto.action;
+package com.how2java.action;
 
-import com.opensymphony.xwork2.ActionContext;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+
 import com.soto.bean.Product;
-import org.apache.struts2.ServletActionContext;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
+@Namespace("/")
+@ParentPackage("struts-default")
+@Results({@Result(name="show", location="/show.jsp"),
+        @Result(name="home", location="/index.jsp")})
 
 public class ProductAction {
     private Product product;
-
+    @Action("showProduct")
     public String show() {
-        HttpServletRequest request = ServletActionContext.getRequest();
-        HttpServletResponse response = ServletActionContext.getResponse();
-        System.out.println("request:\t" + request);
-        System.out.println("response:\t" + response);
-
-
         product = new Product();
         product.setName("iphone7");
-        return "show";
-    }
-
-    public String add() {
-        Map m = ActionContext.getContext().getSession();
-        m.put("name", product.getName());
         return "show";
     }
 
